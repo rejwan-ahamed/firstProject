@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ma18(-=sq^d2n*pl9s!-$vqogo+#w@0k5+y6bccg87^%_b39m9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# I HAVE CHANGE HERE FOR SHOW THE ADMIN PAGE IN STARTING
 DEBUG = True
 
 ALLOWED_HOSTS = []
