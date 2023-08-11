@@ -5,9 +5,14 @@
 
 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
-def home(request,courseID):
+def mainHomepage(request):
+    return render(request, "index.html")
+
+
+def home(request, courseID):
     return HttpResponse(courseID)
 
 
