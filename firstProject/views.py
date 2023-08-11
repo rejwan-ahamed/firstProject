@@ -9,7 +9,12 @@ from django.shortcuts import render
 
 
 def mainHomepage(request):
-    return render(request, "index.html")
+    data = {
+        'title': 'home page title',
+        'pageName': "Home page",
+        'courses': ["python", "php", "javascript", "dart", "C"],
+    }
+    return render(request, "index.html", data)
 
 
 def home(request, courseID):
