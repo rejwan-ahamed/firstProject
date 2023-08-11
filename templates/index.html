@@ -10,6 +10,14 @@
 
     {%for name in courses%}
     <h3>{{name}}</h3>
-    {% endfor %}
+    {% endfor %} {% comment %} using if else condition {% endcomment %} 
+    {% if count|length > 0 %}
+      {%for n in count%} 
+      {% if n > 5 %}
+         <p>{{n}}</p>
+       {% endif %}
+     {%endfor%}
+     {% else %} the list is empty 
+    {% endif %}
   </body>
 </html>

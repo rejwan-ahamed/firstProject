@@ -1,7 +1,7 @@
 # from django.http import HttpResponse
 
 # def contact (request):
-#     return HttpResponse("It is  a contact page I developed in django")
+# return HttpResponse("It is  a contact page I developed in django")
 
 
 from django.http import HttpResponse
@@ -13,6 +13,7 @@ def mainHomepage(request):
         'title': 'home page title',
         'pageName': "Home page",
         'courses': ["python", "php", "javascript", "dart", "C"],
+        'count': [1, 2, 3, 4, 5, 6, 7, 8, 9, 23]
     }
     return render(request, "index.html", data)
 
