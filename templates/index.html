@@ -7,5 +7,9 @@
   </head>
   <body>
     <h1>this is {{pageName}}</h1>
+
+    {%for name in courses%}
+    <h3>{{name}}</h3>
+    {% endfor %}
   </body>
 </html>
