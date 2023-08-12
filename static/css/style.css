@@ -21,6 +21,10 @@ body {
     font-family: 'General Sans', sans-serif;
 }
 
+.active{
+    color: red !important;
+}
+
 /* price title styling */
 .pricing-title {
     height: 3rem !important;

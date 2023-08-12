@@ -269,7 +269,7 @@
 
                 <li>
                     <a href="{% url 'login' %}"
-                        class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0  ">Login</a>
+                        class="{% if request.path == '/login/' %} active {% endif %} block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0  ">Login</a>
                 </li>
                 <li>
                     <a href="#"
