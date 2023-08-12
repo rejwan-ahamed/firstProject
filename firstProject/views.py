@@ -25,8 +25,8 @@ def login(request):
 def register(request):
     try:
         email = request.GET['email']
-        # another type to get method to get from data. here we use get function  
-        password = request.GET.get("password") 
+        # another type to get method to get from data. here we use get function
+        password = request.GET.get("password")
         Cpassword = request.GET['Cpassword']
 
         print(email)
@@ -35,6 +35,24 @@ def register(request):
     except:
         pass
     return render(request, 'register.html')
+
+
+def postForm(request):
+    total = 0
+    formData = {}
+    try:
+        number1 = int(request.POST['password'])
+        number2 = int(request.POST.get("Cpassword"))
+        total = number1 + number2
+
+        formData ={
+        "num1": number1,
+        "num2": number2,
+        "sum": total
+        }
+    except:
+        pass
+    return render(request, 'post.html', formData)
 
 
 def home(request, courseID):

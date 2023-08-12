@@ -23,6 +23,7 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('register/', views.register),
     path('admin-panel/', admin.site.urls),
+    path('post/', views.postForm),
     # path('course/<courseID>',  views.home), this code will use it I don't know which data will come to me in dynamic routs
     # path('course/<str:courseID>',  views.home), this code will use if I want to pass string in dynamic routs
     # path('course/<int:courseID>',  views.home), this code will use if I want to pass integer in dynamic routs
