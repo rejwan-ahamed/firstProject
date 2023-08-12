@@ -20,6 +20,7 @@ from firstProject import views
 
 urlpatterns = [
     path('', views.mainHomepage),
+    path('login/', views.login, name="login"),
     path('admin-panel/', admin.site.urls),
     # path('course/<courseID>',  views.home), this code will use it I don't know which data will come to me in dynamic routs
     # path('course/<str:courseID>',  views.home), this code will use if I want to pass string in dynamic routs

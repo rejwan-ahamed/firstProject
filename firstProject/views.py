@@ -17,6 +17,8 @@ def mainHomepage(request):
     }
     return render(request, "index.html", data)
 
+def login(request):
+    return render(request,'login.html') 
 
 def home(request, courseID):
     return HttpResponse(courseID)
