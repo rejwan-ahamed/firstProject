@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- tailwind css here -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
-    <!-- flowbite link here -->
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-
-    <!-- font share fonts link here -->
-    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&f[]=clash-display@500&display=swap"
-        rel="stylesheet">
-
-    <!-- font awesome cdn here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- custom css here -->
-    <link rel="stylesheet" href="/static/css/style.css">
-
-    <!-- tailwind css -->
-    <link rel="stylesheet" href="/static/tailwind.css">
-
-    <title>Hostinger</title>
-</head>
-
-<body>
-    {% include "header.html" %}
-
+{% extends 'base.html' %}
+{% block content %}
     <!-- hero section start here -->
     <section
         class="hero h-[70rem] flex justify-center items-center px-8 2xl:px-40 2xl:h-screen xl:h-screen xl:px-28 lg:px-12 lg:h-screen lg:mb-8 md:px-8 md:h-[84rem] sm:px-8 sm:h-[84rem]">
@@ -871,21 +840,7 @@
     <!-- commitment part end here -->
 
     <!-- footer start here -->
-    {% include "footer.html" %}
     <!-- footer end here -->
 
 
-    <!-- countdown js here -->
-    <script src="/static/js/countdown.js"></script>
-
-    <!-- show flags js here -->
-    <script src="/static/js/show-flags.js"></script>
-
-    <!-- modal js here -->
-    <script src="/static/js/modal.js"></script>
-
-    <!-- flowbite script here -->
-    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-</body>
-
-</html>
+{% endblock content %}
