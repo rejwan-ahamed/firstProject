@@ -17,8 +17,25 @@ def mainHomepage(request):
     }
     return render(request, "index.html", data)
 
+
 def login(request):
-    return render(request,'login.html') 
+    return render(request, 'login.html')
+
+
+def register(request):
+    try:
+        email = request.GET['email']
+        # another type to get method to get from data. here we use get function  
+        password = request.GET.get("password") 
+        Cpassword = request.GET['Cpassword']
+
+        print(email)
+        print(password, Cpassword)
+
+    except:
+        pass
+    return render(request, 'register.html')
+
 
 def home(request, courseID):
     return HttpResponse(courseID)
