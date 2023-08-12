@@ -1,0 +1,470 @@
+<!-- offer modal start here -->
+<div class="offer bg-[#00000040] justify-center items-center w-screen h-screen fixed z-10 hidden" id="offer">
+    <div class="offer-main rounded-lg w-[16rem] relative">
+        <div class="offer-upper-part">
+            <div class="odder-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-6 h-6 text-red-600 cursor-pointer absolute right-2 top-2 hover:text-red-700 "
+                    id="modal-close">
+                    <path fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <img src="/static/images/9.png" alt="offer image" class="w-64 rounded-t-lg" srcset="">
+        </div>
+        <div class="offer-bottom-part text-center bg-red-600 p-5 rounded-b-lg">
+            <h3 class="text-white font-[500] mb-2 mt-2 font-[cg-m]">Use Thapa7 to get 7% off</h3>
+            <!-- coupon code here -->
+            <h1 class="text-white text-4xl font-[600] font-[cg-b] ">Thapa7</h1>
+            <!-- <h1 class="text-white text-4xl font-[600] font-[cg-m] mb-2 border-2 border-white rounded-full p-2 cursor-pointer hover:bg-white hover:text-red-600">Thapa20</h1> -->
+        </div>
+    </div>
+</div>
+<!-- offer modal end here -->
+
+<!-- nav bar start here -->
+<nav class="bg-white border-gray-200 px-8 py-4 border-b 2xl:px-40 2xl:py-2 xl:px-28 xl:py-2 lg:px-12 lg:py-2">
+    <div class="nav-section-main container flex flex-wrap justify-between items-center mx-auto">
+        <div class="flex items-center">
+            <a href="index.html">
+                <img src="/static/images/logo.svg" class="mr-3 w-32 sm:h-10" alt="hostinger Logo">
+            </a>
+            <!-- flag modal here -->
+            <div class="flag cursor-pointer" id="select-language">
+                <img src="/static/images/flags/flag/india-128x128-2998587.png" class="w-8 h-8" alt="selected language flag"
+                    srcset="">
+            </div>
+        </div>
+        <button data-collapse-toggle="navbar-multi-level" type="button"
+            class="inline-flex justify-center items-center ml-3 text-gray-400 rounded-lg md:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 "
+            aria-controls="navbar-multi-level" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+            <ul
+                class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
+
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                        class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 md:w-auto ">Hosting
+                        <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar"
+                        class="hidden z-10 w-52 font-normal bg-white rounded divide-y divide-gray-100 shadow border border-red-300">
+                        <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                                    </svg>
+                                    Web Hosting</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+                                    </svg>
+                                    Cloud Hosting</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+                                    </svg>
+                                    Wordpress Hosting</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2"
+                        class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 md:w-auto ">VPS
+                        <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar2"
+                        class="hidden z-10 w-52 font-normal bg-white rounded divide-y divide-gray-100 shadow border border-red-300">
+                        <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                                    </svg>
+                                    VPS Hosting</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                    CyberPanel Hosting</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M7.875 14.25l1.214 1.942a2.25 2.25 0 001.908 1.058h2.006c.776 0 1.497-.4 1.908-1.058l1.214-1.942M2.41 9h4.636a2.25 2.25 0 011.872 1.002l.164.246a2.25 2.25 0 001.872 1.002h2.092a2.25 2.25 0 001.872-1.002l.164-.246A2.25 2.25 0 0116.954 9h4.636M2.41 9a2.25 2.25 0 00-.16.832V12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 12V9.832c0-.287-.055-.57-.16-.832M2.41 9a2.25 2.25 0 01.382-.632l3.285-3.832a2.25 2.25 0 011.708-.786h8.43c.657 0 1.281.287 1.709.786l3.284 3.832c.163.19.291.404.382.632M4.5 20.25h15A2.25 2.25 0 0021.75 18v-2.625c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125V18a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                    Microsoft Server Hosting</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar3"
+                        class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 md:w-auto ">Email
+                        <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar3"
+                        class="hidden z-10 w-52 font-normal bg-white rounded divide-y divide-gray-100 shadow border border-red-300">
+                        <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex items-center gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><i
+                                        class="fa-brands fa-google"></i>
+                                    Google Email</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex items-center gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><i
+                                        class="fa-solid fa-at"></i>
+                                    Hostinger Email</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar4"
+                        class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 md:w-auto ">Domain
+                        <svg class="ml-1 w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg></button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar4"
+                        class="hidden z-10 w-52 font-normal bg-white rounded divide-y divide-gray-100 shadow border border-red-300">
+                        <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M20.893 13.393l-1.135-1.135a2.252 2.252 0 01-.421-.585l-1.08-2.16a.414.414 0 00-.663-.107.827.827 0 01-.812.21l-1.273-.363a.89.89 0 00-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.212.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 01-1.81 1.025 1.055 1.055 0 01-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.655-.261a2.25 2.25 0 01-1.383-2.46l.007-.042a2.25 2.25 0 01.29-.787l.09-.15a2.25 2.25 0 012.37-1.048l1.178.236a1.125 1.125 0 001.302-.795l.208-.73a1.125 1.125 0 00-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 01-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 01-1.458-1.137l1.411-2.353a2.25 2.25 0 00.286-.76m11.928 9.869A9 9 0 008.965 3.525m11.928 9.868A9 9 0 118.965 3.525" />
+                                    </svg>
+                                    Domain Name Search</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                    WHOIS Lookup</a>
+                            </li>
+
+                            <li>
+                                <a href="#"
+                                    class="font-[500] flex items-center gap-1 py-2 px-4 hover:bg-gray-100 hover:text-red-500 "><svg
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                                    </svg>
+                                    Domain Transfer</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="login.html"
+                        class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0  ">Login</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0  "><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- nav bar end here -->
+
+<!-- flag modal start from here -->
+<section
+    class="flags px-4 py-10 text-base 2xl:text-base 2xl:px-40 xl:text-base xl:px-28 lg:text-xs lg:px-12 md:px-8 bg-slate-100 hidden"
+    id="flags">
+    <div class="flags-main">
+        <div
+            class="flags-main-upper-part p-4 py-4 max-h-fit bg-white rounded-md border border-gray-200 2xl:px-8 2xl:py-4 xl:px-8 xl:py-4 lg:px-8 lg:py-4 md:px-8 md:py-4 sm:px-8 sm:py-4 ">
+            <div
+                class="flags-upper-part block 2xl:flex 2xl:justify-between 2xl:items-center xl:flex xl:justify-between xl:items-center lg:flex lg:justify-between lg:items-center md:flex md:justify-between md:items-center">
+
+                <form class="flex items-center">
+                    <label for="simple-search" class="sr-only">Search</label>
+                    <div class="relative w-full 2xl:w-[400px] xl:w-[400px] lg:w-[400px] md:w-[400px]">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="simple-search"
+                            class="bg-slate-100 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-500 focus:border-red-500 block w-full pl-10 p-2.5 "
+                            placeholder="Search" required="">
+                    </div>
+                </form>
+                <!-- close button -->
+                <div class="close-button" id="close-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-8 h-8 cursor-pointer text-red-500 hover:text-red-700 hidden 2xl:block xl:block lg:block md:block ">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="flags-main-bottom-part p-4 max-h-fit bg-white rounded-md mt-4 border border-gray-200 2xl:p-8 xl:p-8 lg:p-8 md:p-8">
+            <!-- flags section here -->
+            <div class="flags-name grid grid-cols-1 gap-2 2xl:grid-cols-5 xl:grid-cols-5 lg:grid-flow-col md:grid-cols-3"
+                id="all-flags">
+                <div class="flag-part-1">
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/united-states-of-america-128x128-2998582.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> USA</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/argentina-128x128-2998583.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Argentina</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/brazil-128x128-2998698.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Brazil</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/colombia-128x128-2998718.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Colombia</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/canada-128x128-2998585.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Canada</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/denmark-128x128-2998729.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Denmark</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/egypt-128x128-2998735.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Egypt</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/germany-128x128-2998586.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> East
+                        Germany</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/france-128x128-2998747.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> France</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/hungary-128x128-2998767.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Hungary</a>
+                </div>
+
+                <div class="flag-part-2">
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/india-128x128-2998587.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> India</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag//indonesia-128x128-2998769.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Indonesia</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/iran-128x128-2998770.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Iran</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/iraq-128x128-2998771.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Iraq</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/latvia-128x128-2998787.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Latvia</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/lebanon-128x128-2998788.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Lebanon</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/liechtenstein-128x128-2998792.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Liechtenstein</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/mexico-128x128-2998807.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Mexico</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/mali-128x128-2998800.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Mali</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/malaysia-128x128-2998588.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Malaysia</a>
+                </div>
+
+                <div class="flag-part-3">
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/nepal-128x128-2998819.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Nepal</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/new-zealand-128x128-2998589.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> New
+                        Zealand</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/norway-128x128-2998590.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Norway</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/oman-128x128-2998829.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Oman</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/pakistan-128x128-2998833.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Pakistan</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/philippines-128x128-2998593.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Philippines</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/poland-128x128-2998595.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Poland</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/qatar-128x128-2998598.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Qatar</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/russia-128x128-2998578.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Russia</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/romania-128x128-2998602.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Romania</a>
+                </div>
+
+                <div class="flag-part-4">
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/south-africa-128x128-2998579.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> South
+                        Africa</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/switzerland-128x128-2998580.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Switzerland</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/sweden-128x128-2998635.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Sweden</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/saudi-arabia-128x128-2998611.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> Saudi
+                        Arabia</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/singapore-128x128-2998618.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Singapore</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/spain-128x128-2998628.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Spain</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/turkey-128x128-2998649.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Turkey</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/thailand-128x128-2998640.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Thailand</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/united-kingdom-128x128-2998581.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> United
+                        Kingdom</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/ukraine-128x128-2998653.png" class="w-8 h-8" alt="country flag"
+                            srcset="">
+                        Ukraine</a>
+                </div>
+
+                <div class="flag-part-5">
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/japan-128x128-2998778.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> Japan</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/bangladesh-128x128-2998685.png" class="w-8 h-8"
+                            alt="country flag" srcset="">
+                        Bangladesh</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/south-korea-128x128-2998626.png" class="w-8 h-8"
+                            alt="country flag" srcset=""> South
+                        Korea</a>
+                    <a href="#" class="flex items-center gap-2 font-[600] p-2 rounded-md hover:bg-slate-100"><img
+                            src="/static/images/flags/flag/china-128x128-2998715.png" class="w-8 h-8" alt="country flag"
+                            srcset=""> China</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- flag modal end from here -->

@@ -1,87 +1,891 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery Landing Page Website using HTML, CSS and GSAP</title>
-    <link rel="stylesheet" href="/static/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="img">
-        <img src="/static/logo.svg" alt="" />
-      </div>
-      <div class="heading">ART GALLERY</div>
-      <div class="menu">
-        <img src="/static/menu.svg" alt="" />
-      </div>
-    </header>
-    <div class="container">
-      <div class="inner-container inner-container-1">
-        <div class="inner-inner-container">
-          <div class="top-section">
-            <h1>
-              The <br />
-              night <br />
-              watch
-            </h1>
-            <p>MDCLIIX</p>
-          </div>
-          <div class="bottom-section">2</div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- tailwind css here -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- flowbite link here -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+
+    <!-- font share fonts link here -->
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,400,700&f[]=clash-display@500&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome cdn here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css here -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="/static/tailwind.css">
+
+    <title>Hostinger</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <!-- hero section start here -->
+    <section
+        class="hero h-[70rem] flex justify-center items-center px-8 2xl:px-40 2xl:h-screen xl:h-screen xl:px-28 lg:px-12 lg:h-screen lg:mb-8 md:px-8 md:h-[84rem] sm:px-8 sm:h-[84rem]">
+        <div
+            class="hero-main grid grid-cols-1 2xl:grid-cols-2 2xl:grid xl:grid-cols-2 xl:grid lg:grid-cols-2 lg:grid md:grid md:grid-cols-1 sm:grid-cols-1">
+            <div class="hero-left-section order-2 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2">
+                <!-- hero main title -->
+                <h1
+                    class="text-center font-[600] text-[30px] w-full 2xl:w-9/12 2xl:text-left 2xl:text-[30px] xl:text-left xl:w-9/12 xl:text-[30px] lg:text-left lg:text-[30px] lg:w-9/12 sm:text-center sm:w-full sm:text-[40px] ">
+                    Savings to Set Your Website in Motion</h1>
+
+                <!-- pricing title  -->
+                <div
+                    class="pricing-title flex justify-center relative 2xl:justify-start xl:justify-start lg:justify-start ">
+                    <div
+                        class="money-symbol font-bold text-3xl text-red-500 absolute left-[0%] top-[50%] lg:left-[0%] lg:top-[68%] sm:left-[24%] sm:top-[65%] 2xl:text-3xl xl:text-3xl lg:text-3xl sm:text-4xl">
+                        ₹
+                    </div>
+                    <div
+                        class="amount text-[70px] font-bold ml-6 text-red-500 2xl:text-[90px] xl:text-[90px] lg:text-[90px] md:text-[90px] sm:text-[90px]">
+                        149.00
+                    </div>
+                    <div class="par-month font-bold text-3xl text-red-500">
+                        /mo
+                    </div>
+                </div>
+
+                <!-- hero paragraph -->
+                <p
+                    class="hero-paragraph font-medium text-center w-full mt-24 2xl:text-left 2xl:w-9/12 2xl:text-base 2xl:px-0 xl:text-left xl:w-9/12 xl:text-base xl:px-0 lg:text-left lg:w-9/12 lg:text-base lg:px-0 sm:text-center sm:w-full sm:text-2xl sm:px-20 ">
+                    Get things moving with a free domain, lifetime SSL,
+                    and DDoS protection
+                    included with a four-year
+                    subscription.</p>
+
+                <!-- countdown part here -->
+                <div
+                    class="countdown mt-6 flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                    <div class="countdown-main flex gap-2">
+                        <!-- for day part -->
+                        <div class="day flex flex-col items-center">
+                            <div
+                                class="day-main font-mono font-bold text-center bg-red-500 p-6 w-16 flex justify-center items-center rounded-md">
+                                <h1 class="text-center text-white text-2xl" id="day">01</h1>
+                            </div>
+                            <h3 class="font-medium text-[14px] mt-1">days</h3>
+                        </div>
+                        <!-- for day part -->
+                        <div class="day flex flex-col items-center">
+                            <div
+                                class="day-main font-mono font-bold text-center bg-red-500 p-6 w-16 flex justify-center items-center rounded-md">
+                                <h1 class="text-center text-white text-2xl" id="hour">01</h1>
+                            </div>
+                            <h3 class="font-medium text-[14px] mt-1">hours</h3>
+                        </div>
+                        <!-- for day part -->
+                        <div class="day flex flex-col items-center">
+                            <div
+                                class="day-main font-mono font-bold text-center bg-red-500 p-6 w-16 flex justify-center items-center rounded-md">
+                                <h1 class="text-center text-white text-2xl" id="minute">01</h1>
+                            </div>
+                            <h3 class="font-medium text-[14px] mt-1">minutes</h3>
+                        </div>
+                        <!-- for day part -->
+                        <div class="day flex flex-col items-center">
+                            <div
+                                class="day-main font-mono font-bold text-center bg-red-500 p-6 w-16 flex justify-center items-center rounded-md">
+                                <h1 class="text-center text-white text-2xl" id="second">01</h1>
+                            </div>
+                            <h3 class="font-medium text-[14px] mt-1">seconds</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- call to action button for hero section -->
+                <div
+                    class="hero-call-to-action mt-10 flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                    <a href="#"
+                        class="call-to-action bg-red-500 border font-medium text-2xl text-white text-center py-3 px-12 rounded-full hover:border hover:border-red-500 hover:bg-transparent hover:text-red-500">Get
+                        Started</a>
+                </div>
+
+                <!-- sub title here -->
+                <div
+                    class="hero-sub-titl mt-10 flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center 2xl:text-base 2xl:mt-6 xl:text-base xl:mt-6 lg:text-base lg:mt-6 md:text-2xl md:mt-6 sm:text-2xl sm:mt-6">
+                    <span class="text-red-600"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                    <p class="font-medium ml-1">Get exclusive 30-day money-back guarantee</p>
+                </div>
+            </div>
+
+            <div
+                class="hero-right-section flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center 2xl:order-2 xl:order-2 lg:order-2 md:order-1 sm:order-1">
+                <img src="/static/images/1.png" alt="" srcset="">
+            </div>
         </div>
-      </div>
-      <div class="inner-container inner-container-2">
-        <div class="inner-inner-container">
-          <div class="top-section">
-            <h1>
-              The <br />
-              Kitchen <br />
-              Maid
-            </h1>
-            <p>MDCLI</p>
-          </div>
-          <div class="bottom-section">3</div>
+    </section>
+    <!-- hero section end here -->
+
+    <!-- support section logos start here -->
+    <section class="support-logos mb-8 xl:mt-6">
+        <div class="support-logos-main overflow-x-auto flex gap-12 justify-center items-center">
+            <img src="/static/images/cloud-flare.svg" class="cursor-pointer" cloud-flare logo" srcset="">
+            <img src="/static/images/light-speed.svg" class="cursor-pointer" light-speed logo" srcset="">
+            <img src="/static/images/wordpress.svg" class="cursor-pointer" wordpress logo" srcset="">
         </div>
-      </div>
-      <div class="inner-container inner-container-3">
-        <div class="inner-inner-container">
-          <div class="top-section">
-            <h1>
-              The <br />
-              artist in <br />
-              studio
-            </h1>
-            <p>MDCXVII</p>
-          </div>
-          <div class="bottom-section">4</div>
+    </section>
+    <!-- support section logos end here -->
+
+    <!-- select-best plans start here -->
+    <section class="select-best-plan px-8 mt-32 2xl:px-40 xl:px-28 lg:px-12 md:px-8 sm:px-8">
+        <div class="select-plan-title flex justify-center items-center flex-col">
+            <h2
+                class="text-3xl font-[600] text-center mb-6 2xl:text-4xl xl:text-4xl lg:text-4xl md:text-4xl sm:text-4xl">
+                All-In-One Web Hosting</h2>
+            <p
+                class="text-base font-medium text-gray-500 w-full text-center 2xl:text-base 2xl:w-8/12 xl:text-base xl:w-8/12  lg:text-base lg:w-8/12 md:text-xl md:w-5/6 sm:text-xl sm:w-5/6">
+                We prepared the best web hosting plan for
+                you to start. You will be able to adjust plans as you go - our
+                custom-built algorithm will provide suggestions based on your usage.</p>
         </div>
-      </div>
-      <div class="inner-container inner-container-4">
-        <div class="inner-inner-container">
-          <div class="top-section">
-            <h1>
-              Titus <br />
-              as a <br />
-              Monk
-            </h1>
-            <p>MDCLX</p>
-          </div>
-          <div class="bottom-section">5</div>
+        <div
+            class="select-best-plain-main flex flex-col 2xl:grid 2xl:grid-cols-2 xl:grid xl:grid-cols-2 lg:grid lg:grid-cols-2 md:flex md:flex-col sm:flex sm:flex-col">
+            <div
+                class="best-plan-left flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                <img src="/static/images/3.png" alt="" srcset="">
+            </div>
+            <div class="select-best-plan-right flex justify-center items-center">
+
+                <!-- plan details -->
+                <div class="plan-details">
+
+                    <!-- main plan price -->
+                    <h1 class="text-4xl font-[600] text-red-500 mb-8">₹149.00/mo</h1>
+
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>Unmetered</strong> traffic (Unlimited GB)</h3>
+                    </div>
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>100 </strong>Websites</h3>
+                    </div>
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>100 </strong>GB SSD Storage</h3>
+                    </div>
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>Free </strong>Weekly Backups</h3>
+                    </div>
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>Unlimited </strong>Free SSL</h3>
+                    </div>
+                    <div class="plan-detail flex text-green-600 mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                        <h3 class="font-medium ml-1 text-black"><strong>Free </strong>Domain</h3>
+                    </div>
+
+                    <!-- select plan button here -->
+                    <div class="select-main-plan-button mt-12">
+                        <a href="#"
+                            class="bg-red-500 text-white font-medium text-center px-16 py-3 rounded-full hover:bg-red-600">Select</a>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-      </div>
-    </div>
-    <script>
-      const tl = gsap.timeline();
-      tl.from(".img, .heading, .menu, h1, p, .bottom-section", {
-        duration: 1,
-        y: 200,
-        opacity: 0,
-        stagger: {
-          amount: 0.5,
-        },
-      });
-    </script>
-  </body>
+    </section>
+    <!-- select-best plans end here -->
+
+    <!-- pricing section start here -->
+    <section
+        class="pricing px-4 mb-20 mt-20 2xl:max-[1536px] xl:max-w-fit 2xl:px-40 2xl:mt-0 2xl:mb-40 xl:px-28 xl:mt-0 xl:mb-40 lg:mt-0 lg:px-12 lg:mb-40 md:px-16 md:mt-20 md:mb-20 sm:px-16 sm:mt-20 sm:mb-20">
+        <div class="pricing-main">
+            <div class="pricing-title-main">
+                <h2
+                    class="text-3xl font-[600] text-center mb-28 mt-10 2xl:mb-28 2xl:text-4xl xl:mb-28 xl:text-4xl lg:mb-28 lg:text-4xl md:mb-10 md:text-4xl sm:mb-10 sm:text-4xl">
+                    Choose Your Web Hosting Plan</h2>
+            </div>
+
+            <!-- pricing category here -->
+            <div
+                class="price-category-main grid grid-cols-1 2xl:gap-3 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 overflow-y-hidden">
+                <div
+                    class="pricing-category mx-auto mb-4 2xl:mt-0 2xl:mx-0 2xl:mb-0 xl:mt-0 xl:mx-0 xl:mb-0 lg:mt-0 lg:mx-0 lg:mb-0 md:mt-10 md:mx-auto md:mb-0 sm:mt-10 sm:mx-auto sm:mb-0">
+                    <div
+                        class="pricing-details-card border-[2px] w-72 h-[36rem] rounded-md 2xl:w-72 2xl:h-[37rem] xl:w-[95%] xl:h-[38rem] lg:w-[95%] lg:h-[41rem]">
+                        <div class="pricing-top-part p-5">
+                            <div class="pricing-name text-[20px] font-[600] ">Hobby</div>
+                            <p class="pricing-description text-[15px] text-gray-600 font-medium mt-4 mb-6">
+                                All the basics for starting a new
+                                business
+                            </p>
+
+                            <div class="pricing-amount mb-8">
+                                <h4 class="text-4xl font-[600]">₹49.00<span class="text-xl text-gray-600">/mo</span>
+                                </h4>
+                            </div>
+
+                            <button
+                                class="bg-gray-800 text-white font-medium rounded-md w-full py-2 text-center cursor-pointer border hover:bg-white hover:text-black hover:border hover:border-gray-800">Select
+                                Hobby</button>
+                        </div>
+
+                        <!-- HR line  -->
+                        <div class="hr-bottom w-full border-b-2">
+
+                        </div>
+
+                        <div class="pricing-bottom-part p-5">
+                            <p class="text-black font-medium mb-6">What's included</p>
+                            <div class="pricing-details flex flex-col gap-2">
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">2 Website</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">5GB SSD Storage</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">100 GB Bandwidth</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">2 Database</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="pricing-category mx-auto mb-4 2xl:mt-0 2xl:mx-0 2xl:mb-0 xl:mt-0 xl:mx-0 xl:mb-0 lg:mt-0 lg:mx-0 lg:mb-0 md:mt-10 md:mx-auto md:mb-0 sm:mt-10 sm:mx-auto sm:mb-0">
+                    <div
+                        class="pricing-details-card border-[2px] border-red-500 w-72 h-[36rem] rounded-md 2xl:w-72 2xl:h-[37rem] xl:w-[95%] xl:h-[38rem] lg:w-[95%] lg:h-[41rem]">
+                        <div class="pricing-top-part p-5">
+                            <div class="pricing-name text-[20px] font-[600] text-red-500">Freelancer
+                            </div>
+                            <p class="pricing-description text-[15px] text-gray-600 font-medium mt-4 mb-6">
+                                All the basics for starting a new
+                                business
+                            </p>
+
+                            <div class="pricing-amount mb-8">
+                                <h4 class="text-red-500 text-4xl font-[600]">₹149.00<span
+                                        class="text-xl text-red-500">/mo</span>
+                                </h4>
+                            </div>
+
+                            <button
+                                class="bg-red-500 text-white font-medium rounded-md w-full py-2 text-center cursor-pointer border hover:bg-white hover:text-red-500 hover:border hover:border-red-500">Select
+                                Freelancer
+                            </button>
+                        </div>
+
+                        <!-- HR line  -->
+                        <div class="hr-bottom w-full border-b-2 border-red-500">
+
+                        </div>
+
+                        <div class="pricing-bottom-part p-5">
+                            <p class="text-black font-medium mb-6">What's included</p>
+                            <div class="pricing-details flex flex-col gap-2">
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">100 Website</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">20 GB SSD storage</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">200 GB Bandwidth</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">20 Database</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Free Email</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Weekly Backup</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">1 Free Domain</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div
+                    class="pricing-category mx-auto mb-4 2xl:mt-0 2xl:mx-0 2xl:mb-0 xl:mt-0 xl:mx-0 xl:mb-0 lg:mt-0 lg:mx-0 lg:mb-0 md:mt-10 md:mx-auto md:mb-0 sm:mt-10 sm:mx-auto sm:mb-0">
+                    <div
+                        class="pricing-details-card border-[2px] w-72 h-[36rem] rounded-md 2xl:w-72 2xl:h-[37rem] xl:w-[95%] xl:h-[38rem] lg:w-[95%] lg:h-[41rem]">
+                        <div class="pricing-top-part p-5">
+                            <div class="pricing-name text-[20px] font-[600] ">Startup
+                            </div>
+                            <p class="pricing-description text-[15px] text-gray-600 font-medium mt-4 mb-6">
+                                All the basics for starting a new
+                                business
+                            </p>
+
+                            <div class="pricing-amount mb-8">
+                                <h4 class="text-4xl font-[600]">₹299.00<span class="text-xl text-gray-600">/mo</span>
+                                </h4>
+                            </div>
+
+                            <button
+                                class="bg-gray-800 text-white font-medium rounded-md w-full py-2 text-center cursor-pointer border hover:bg-white hover:text-black hover:border hover:border-gray-800">Select
+                                Startup
+                            </button>
+                        </div>
+
+                        <!-- HR line  -->
+                        <div class="hr-bottom w-full border-b-2">
+
+                        </div>
+
+                        <div class="pricing-bottom-part p-5">
+                            <p class="text-black font-medium mb-6">What's included</p>
+                            <div class="pricing-details flex flex-col gap-2">
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited Website</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">50 GB SSD storage</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited Bandwidth</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">50 Database</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Free Email</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Weekly Backup</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">3 Free Domain</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div
+                    class="pricing-category mx-auto 2xl:mt-0 2xl:mx-0 xl:mt-0 xl:mx-0 lg:mt-0 lg:mx-0 md:mt-10 md:mx-auto sm:mt-10 sm:mx-auto">
+                    <div
+                        class="pricing-details-card border-[2px] w-72 h-[36rem] rounded-md 2xl:w-72 2xl:h-[37rem] xl:w-[95%] xl:h-[38rem] lg:w-[95%] lg:h-[41rem]">
+                        <div class="pricing-top-part p-5">
+                            <div class="pricing-name text-[20px] font-[600] ">Enterprise
+                            </div>
+                            <p class="pricing-description text-[15px] text-gray-600 font-medium mt-4 mb-6">
+                                All the basics for starting a new
+                                business
+                            </p>
+
+                            <div class="pricing-amount mb-8">
+                                <h4 class="text-4xl font-[600]">₹499.00<span class="text-xl text-gray-600">/mo</span>
+                                </h4>
+                            </div>
+
+                            <button
+                                class="bg-gray-800 text-white font-medium rounded-md w-full py-2 text-center cursor-pointer border hover:bg-white hover:text-black hover:border hover:border-gray-800">Select
+                                Enterprise
+                            </button>
+                        </div>
+
+                        <!-- HR line  -->
+                        <div class="hr-bottom w-full border-b-2">
+
+                        </div>
+
+                        <div class="pricing-bottom-part p-5">
+                            <p class="text-black font-medium mb-6">What's included</p>
+                            <div class="pricing-details flex flex-col gap-2">
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited Website</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited SSD storage
+                                    </p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited Bandwidth</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Unlimited Database</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Free Email</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">Weekly Backup</p>
+                                </div>
+                                <div class="main-detail text-green-600 flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="font-medium text-gray-500 ml-1 text-[16px] w-4/5">5 Free Domain</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pricing section end here -->
+
+
+    <!-- find out domain name section start here -->
+    <section class="check-domain-section bg-red-100 h-max py-20 ">
+        <div class="domain-main px-8 2xl:px-20 xl:px-20 lg:px-12 sm:px-8">
+            <!-- domain section title -->
+            <div class="domain-main-top-part flex justify-center items-center flex-col">
+                <h1 class="domain-title text-4xl font-[600] text-center mb-6 text-black">Find the perfect domain name
+                </h1>
+                <p
+                    class="domain-paragraph text-xl font-medium text-black w-full text-center 2xl:w-1/2 2xl:text-base xl:w-1/2 xl:text-base lg:w-4/5 lg:text-base md:w-4/5 md:text-xl sm:w-4/5 sm:text-xl">
+                    Enter domain name of your
+                    choice and
+                    pick any extension name on the next step (choose between .in,
+                    .com, .online, .live, .store, .info and many more)</p>
+            </div>
+
+            <div class="search-section-here w-full mx-auto mt-10 2xl:w-1/2 xl:w-1/2 lg:w-4/5 md:w-4/5 sm:w-4/5">
+
+                <form class="flex items-center">
+                    <label for="voice-search" class="sr-only">Search</label>
+                    <div class="relative w-full">
+                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input type="text" id="voice-search"
+                            class="bg-gray-50 border-2 border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 "
+                            placeholder="Check your domain" required="">
+                        <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
+                            <svg aria-hidden="true" class="w-4 h-4 text-gray-500  hover:text-gray-900 "
+                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <button type="submit"
+                        class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-500 rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+                        <svg aria-hidden="true" class="mr-2 -ml-1 w-5 h-5" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>Search
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <!-- find out domain name section end here -->
+
+    <!-- our service section start here -->
+    <section class="our-service">
+        <div class="service-main px-8 2xl:px-40 xl:px-28 lg:px-12 lg:mt-20 md:mt-0 md:px-8 sm:mt-0 sm:px-8">
+            <div
+                class="service-1 grid grid-cols-1 items-center justify-center 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+                <service-left
+                    class="flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                    <img src="/static/images/4.png" alt="" srcset="">
+                </service-left>
+                <service-right>
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">24/7/365 Live Support</h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">
+                        Worried you won’t get help when you need it the most?
+                        You shouldn't be. Our Customer Success team
+                        is ready to help you 24/7/365 with all topics related to website hosting.</p>
+
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">Top-Performing Websites</h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">Don’t
+                        let poor speed scores bring your website down.
+                        From HTTP/3 to self-healing infrastructure, full SSD servers, and unlimited bandwidth, offer
+                        your visitors the fastest browsing experience.</p>
+
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">Migrate with Ease, for Free</h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">We
+                        won’t charge you for migrating your website to
+                        Hostinger, and we’ll take care of the process so you can focus on what matters.
+                    </p>
+                </service-right>
+            </div>
+
+            <div
+                class="service-2 grid grid-cols-1 items-center justify-center 2xl:pt-0 2xl:grid 2xl:grid-cols-2 xl:grid xl:grid-cols-2 xl:pt-0 lg:grid lg:grid-cols-2 lg:pt-20 md:grid-cols-1 sm:grid-cols-1">
+                <service-left class="order-2 2xl:order-1 xl:order-1 lg:order-1 md:order-2 sm:order-2">
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">Everything You Need for WordPress
+                    </h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">Let
+                        your WordPress website shine. Get the best results
+                        with LiteSpeed-powered servers and custom-built advanced WordPress optimization tools.</p>
+
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">We Take Security Seriously</h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">Don’t
+                        leave your website vulnerable to cyber attacks.
+                        Instead, get an in-house developed WAF with our Premium and Business web hosting plans and keep
+                        your website safe.
+                    </p>
+
+                    <h1 class="service-title font-[600] text-red-500 text-2xl mb-4">No Experience Required</h1>
+                    <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">With
+                        Hostinger, you don’t need to be a pro to get
+                        started. Thanks to our easy-to-use control panel, intuitive interface, and best hosting
+                        features, you will be able to launch your website within minutes. Worried about language
+                        barriers? Don’t be – our hPanel is localized in 15 languages.
+                    </p>
+                </service-left>
+                <service-right
+                    class="2xl:order-2 xl:order-2 lg:order-2 md:order-1 sm:order-1 flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                    <img src="/static/images/5.png" alt="" srcset="">
+                </service-right>
+            </div>
+        </div>
+    </section>
+    <!-- our service section end here -->
+
+    <!-- console section start here -->
+    <section
+        class="console px-8 2xl:px-40 2xl:mb-0 xl:px-28 xl:mb-0 lg:px-12 lg:mb-0 md:px-8 md:mb-10 sm:px-8 sm:mb-10">
+        <!-- console title -->
+        <h2 class="text-4xl font-[600] text-center mb-10 mt-24">User-Friendly Control Panel</h2>
+
+        <div
+            class="console-main grid grid-cols-1 items-center lg:mt-20 lg:mb-20 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+            <div
+                class="console-left flex justify-center 2xl:justify-start xl:justify-start lg:justify-start sm:justify-center">
+                <img src="/static/images/6.png" class="console-image" alt="console image" srcset="">
+            </div>
+            <div class="console-right">
+                <div class="console-details">
+                    <div class="details-icon text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="details-title">
+                        <h4 class="text-xl font-[600] mt-2 mp-4">Ease of Use</h4>
+                    </div>
+                    <div class="details-description">
+                        <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">
+                            Hostinger Panel is extremely user-friendly and can be
+                            used by
+                            those with little experience in
+                            website development.
+                        </p>
+                    </div>
+                </div>
+                <div class="console-details">
+                    <div class="details-icon text-red-500 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="details-title">
+                        <h4 class="text-xl font-[600] mt-2 mp-4">Powerful</h4>
+                    </div>
+                    <div class="details-description">
+                        <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">A
+                            wide variety of tools to satisfy advanced user and
+                            website developer needs.
+                        </p>
+                    </div>
+                </div>
+                <div class="console-details">
+                    <div class="details-icon text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M11.622 1.602a.75.75 0 01.756 0l2.25 1.313a.75.75 0 01-.756 1.295L12 3.118 10.128 4.21a.75.75 0 11-.756-1.295l2.25-1.313zM5.898 5.81a.75.75 0 01-.27 1.025l-1.14.665 1.14.665a.75.75 0 11-.756 1.295L3.75 8.806v.944a.75.75 0 01-1.5 0V7.5a.75.75 0 01.372-.648l2.25-1.312a.75.75 0 011.026.27zm12.204 0a.75.75 0 011.026-.27l2.25 1.312a.75.75 0 01.372.648v2.25a.75.75 0 01-1.5 0v-.944l-1.122.654a.75.75 0 11-.756-1.295l1.14-.665-1.14-.665a.75.75 0 01-.27-1.025zm-9 5.25a.75.75 0 011.026-.27L12 11.882l1.872-1.092a.75.75 0 11.756 1.295l-1.878 1.096V15a.75.75 0 01-1.5 0v-1.82l-1.878-1.095a.75.75 0 01-.27-1.025zM3 13.5a.75.75 0 01.75.75v1.82l1.878 1.095a.75.75 0 11-.756 1.295l-2.25-1.312a.75.75 0 01-.372-.648v-2.25A.75.75 0 013 13.5zm18 0a.75.75 0 01.75.75v2.25a.75.75 0 01-.372.648l-2.25 1.312a.75.75 0 11-.756-1.295l1.878-1.096V14.25a.75.75 0 01.75-.75zm-9 5.25a.75.75 0 01.75.75v.944l1.122-.654a.75.75 0 11.756 1.295l-2.25 1.313a.75.75 0 01-.756 0l-2.25-1.313a.75.75 0 11.756-1.295l1.122.654V19.5a.75.75 0 01.75-.75z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="details-title">
+                        <h4 class="text-xl font-[600] mt-2 mp-4">WordPress Optimized</h4>
+                    </div>
+                    <div class="details-description">
+                        <p class="text-black font-medium w-full mb-6 2xl:w-full xl:w-full lg:w-full md:w-3/5 sm:w-3/5">
+                            Get more speed, better SEO, visitor retention and
+                            conversions with our custom-built WP optimization stack and LiteSpeed cache.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- console section end here -->
+
+    <!-- testimonial part start here -->
+    <section class="testimonial">
+        <div
+            class="testimonial-main px-4 py-20 2xl:px-40 2xl:py-40 xl:px-40 xl:py-40 lg:px-12 lg:py-20 md:px-8 md:py-20 sm:px-8 sm:py-20">
+            <div class="retting text-black flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                </svg>
+
+            </div>
+
+            <!-- testimonial details -->
+            <div
+                class="testimonial-details text-3xl text-center w-5/6 mx-auto mb-10 mt-10 2xl:w-3/4 xl:w-3/4 lg:w-3/4 md:w-5/6 sm:w-5/6">
+                "I am satisfied with their hosting and their services. Easy to use the console and easy to deploy a new
+                website. Hosting is fast and worth money." </div>
+
+            <!-- avatar -->
+            <div class="user-avatar flex justify-center items-center">
+                <img src="/static/images/avatar.jpg" class="h-14 w-14 rounded-full" alt="user avatar" srcset="">
+                <div class="user-details">
+                    <h4 class="text-[18px] font-[500] ml-2">Rejwan Ahamed</h4>
+                    <p class="font-medium ml-2 text-gray-600">Backend developer</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- testimonial part end here -->
+
+    <!-- commitment part start here -->
+    <section class="commitment px-8 mt-32 2xl:px-40 xl:px-40 lg:px-12 md:px-4 sm:px-4">
+        <div class="commitment-main flex flex-col justify-center items-center">
+            <div class="commitment-main-top-part flex justify-center item-center flex-col w-full">
+                <h2 class="commitment-title text-4xl font-[600] text-center mb-6">All-In-One Web Hosting</h2>
+                <p
+                    class="commitment-pargraph text-base font-medium text-gray-500 w-full mx-auto text-center 2xl:text-base 2xl:w-8/12 xl:text-base xl:w-8/12 lg:text-base lg:w-8/12 md:text-xl md:w-5/6 sm:text-xl sm:w-5/6">
+                    We
+                    prepared the
+                    best web hosting plan for
+                    you to start. You will be able to adjust plans as you go - our
+                    custom-built algorithm will provide suggestions based on your usage.</p>
+            </div>
+
+            <!-- commitment button here -->
+            <div class="commitment-button-main mt-10 mb-40">
+                <button
+                    class="commitment-button bg-red-500 border font-medium text-2xl text-white text-center py-3 px-12 rounded-full hover:border hover:border-red-500 hover:bg-transparent hover:text-red-500">Get
+                    Started</button>
+            </div>
+
+        </div>
+    </section>
+    <!-- commitment part end here -->
+
+    <!-- footer start here -->
+    {% include "footer.html" %}
+    <!-- footer end here -->
+
+
+    <!-- countdown js here -->
+    <script src="/static/js/countdown.js"></script>
+
+    <!-- show flags js here -->
+    <script src="/static/js/show-flags.js"></script>
+
+    <!-- modal js here -->
+    <script src="/static/js/modal.js"></script>
+
+    <!-- flowbite script here -->
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+</body>
+
 </html>
