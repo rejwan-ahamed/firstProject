@@ -4,7 +4,7 @@
 # return HttpResponse("It is  a contact page I developed in django")
 
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 
@@ -19,7 +19,9 @@ def mainHomepage(request):
 
 
 def login(request):
-    return render(request, 'login.html')
+    if request.method == "GET":
+        result = request.GET.get('total')
+    return render(request, 'login.html', {"output": result})
 
 
 def register(request):
@@ -38,6 +40,9 @@ def register(request):
 
 
 def postForm(request):
+    print(request.POST)
+    # if request.POST['password'] =="":
+    #     return render(request, 'post.html', {"error": True})
     total = 0
     formData = {}
     try:
@@ -45,11 +50,15 @@ def postForm(request):
         number2 = int(request.POST.get("Cpassword"))
         total = number1 + number2
 
-        formData ={
-        "num1": number1,
-        "num2": number2,
-        "sum": total
+        formData = {
+            "num1": number1,
+            "num2": number2,
+            "sum": total
         }
+
+        url = "/login/?total={}".format(total)
+
+        return HttpResponseRedirect(url)
     except:
         pass
     return render(request, 'post.html', formData)
