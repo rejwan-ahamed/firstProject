@@ -1,19 +1,3 @@
-"""
-URL configuration for firstProject project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path
 from firstProject import views
@@ -24,9 +8,6 @@ urlpatterns = [
     path('register/', views.register),
     path('admin-panel/', admin.site.urls),
     path('post/', views.postForm),
-    # path('course/<courseID>',  views.home), this code will use it I don't know which data will come to me in dynamic routs
-    # path('course/<str:courseID>',  views.home), this code will use if I want to pass string in dynamic routs
-    # path('course/<int:courseID>',  views.home), this code will use if I want to pass integer in dynamic routs
     path('course/<courseID>',  views.home),
     path('course/', views.aboutMe),
 ]

@@ -7,6 +7,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
+from firstProject.routes import router, Router
+
 
 def mainHomepage(request):
     data = {
@@ -29,10 +31,10 @@ def register(request):
         email = request.GET['email']
         # another type to get method to get from data. here we use get function
         password = request.GET.get("password")
-        Cpassword = request.GET['Cpassword']
+        c_password = request.GET['Cpassword']
 
         print(email)
-        print(password, Cpassword)
+        print(password, c_password)
 
     except:
         pass
@@ -40,28 +42,17 @@ def register(request):
 
 
 def postForm(request):
-    print(request.POST)
-    # if request.POST['password'] =="":
-    #     return render(request, 'post.html', {"error": True})
-    total = 0
-    formData = {}
-    try:
-        number1 = int(request.POST['password'])
-        number2 = int(request.POST.get("Cpassword"))
-        total = number1 + number2
-
-        formData = {
-            "num1": number1,
-            "num2": number2,
-            "sum": total
-        }
-
-        url = "/login/?total={}".format(total)
-
-        return HttpResponseRedirect(url)
-    except:
-        pass
-    return render(request, 'post.html', formData)
+    context = {}
+    if request.method == 'POST':
+        password = request.POST.get('password', 'abc')
+        confirm_password = request.POST.get("confirm_password", '')
+        if password != confirm_password:
+            context['error'] = "password doesn't match"
+            context['password'] = password
+            context['confirm_password'] = confirm_password
+        else:
+            return HttpResponseRedirect(router.Home)
+    return render(request, 'post.html', context)
 
 
 def home(request, courseID):
